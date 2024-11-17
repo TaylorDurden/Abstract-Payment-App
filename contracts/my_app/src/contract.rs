@@ -1,9 +1,7 @@
 use crate::{
     error::MyAppError,
     handlers,
-    msg::{
-        MyAppExecuteMsg, MyAppInstantiateMsg, MyAppMigrateMsg, MyAppQueryMsg
-    },
+    msg::{MyAppExecuteMsg, MyAppInstantiateMsg, MyAppMigrateMsg, MyAppQueryMsg},
     replies::{self, INSTANTIATE_REPLY_ID},
     APP_VERSION, MY_APP_ID,
 };

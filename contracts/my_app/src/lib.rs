@@ -5,8 +5,6 @@ pub mod msg;
 mod replies;
 pub mod state;
 
-
-
 pub use error::MyAppError;
 
 /// The version of your app

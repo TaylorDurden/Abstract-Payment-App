@@ -45,4 +45,3 @@ pub struct ConfigResponse {}
 pub struct CountResponse {
     pub count: i32,
 }
-

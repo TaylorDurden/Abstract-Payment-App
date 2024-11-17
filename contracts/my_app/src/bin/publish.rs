@@ -20,9 +20,7 @@ fn publish(networks: Vec<ChainInfo>) -> anyhow::Result<()> {
     for network in networks {
         // Setup
         let rt = Runtime::new()?;
-        let chain = DaemonBuilder::new(network)
-            .handle(rt.handle())
-            .build()?;
+        let chain = DaemonBuilder::new(network).handle(rt.handle()).build()?;
 
         let app_namespace = Namespace::from_id(MY_APP_ID)?;
 
@@ -30,7 +28,9 @@ fn publish(networks: Vec<ChainInfo>) -> anyhow::Result<()> {
         let abstract_client: AbstractClient<Daemon> = AbstractClient::new(chain.clone())?;
 
         // Get the [`Account`] that owns the namespace, otherwise create a new one and claim the namespace
-        let publisher_acc = abstract_client.fetch_or_build_account(app_namespace, |builder| builder.namespace(Namespace::from_id(MY_APP_ID).unwrap()))?;
+        let publisher_acc = abstract_client.fetch_or_build_account(app_namespace, |builder| {
+            builder.namespace(Namespace::from_id(MY_APP_ID).unwrap())
+        })?;
 
         // Get the [`Publisher`]
         let publisher: Publisher<_> = publisher_acc.publisher()?;

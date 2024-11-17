@@ -1,7 +1,5 @@
 use crate::{
-    contract::{
-        MyApp, MyAppResult
-    },
+    contract::{MyApp, MyAppResult},
     msg::MyAppMigrateMsg,
 };
 

@@ -1,7 +1,5 @@
 use crate::{
-    contract::{
-        MyApp, MyAppResult
-    },
+    contract::{MyApp, MyAppResult},
     msg::MyAppExecuteMsg,
     state::{CONFIG, COUNT},
 };
@@ -26,7 +24,9 @@ pub fn execute_handler(
 /// Update the configuration of the app
 fn update_config(deps: DepsMut, env: Env, msg_info: MessageInfo, module: MyApp) -> MyAppResult {
     // Only the admin should be able to call this
-    module.admin.assert_admin(deps.as_ref(), &env, &msg_info.sender)?;
+    module
+        .admin
+        .assert_admin(deps.as_ref(), &env, &msg_info.sender)?;
     let mut _config = CONFIG.load(deps.storage)?;
 
     Ok(module.response("update_config"))
@@ -39,7 +39,9 @@ fn increment(deps: DepsMut, module: MyApp) -> MyAppResult {
 }
 
 fn reset(deps: DepsMut, env: Env, info: MessageInfo, count: i32, module: MyApp) -> MyAppResult {
-    module.admin.assert_admin(deps.as_ref(), &env, &info.sender)?;
+    module
+        .admin
+        .assert_admin(deps.as_ref(), &env, &info.sender)?;
     COUNT.save(deps.storage, &count)?;
 
     Ok(module.response("reset"))
