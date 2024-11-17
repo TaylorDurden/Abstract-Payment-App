@@ -24,7 +24,7 @@ It will prompt Project Name (will be used for namespace), App Name, Adapter Name
 It will also prompt for including IBC related code. You can do this if you aim to build an IBC-enabled application on an App module.
 
 ```shell
-cd payment1
+cd Abstract-Payment-App
 ```
 
 to go to your newly created project and finish setup by running the following command:
@@ -57,8 +57,8 @@ Here are some of the tasks available in the `justfile`:
 - `watch-test`: Watch the codebase and run tests on changes.
 - `publish CHAIN_ID`: Publish the App to a network.
 - `schema`: Generate the json schemas for the contract
-<!-- - `ts-codegen`: Generate the typescript app code for the contract -->
-<!-- - `ts-publish`: Publish the typescript app code to npm -->
+  <!-- - `ts-codegen`: Generate the typescript app code for the contract -->
+  <!-- - `ts-publish`: Publish the typescript app code to npm -->
 - `publish-schemas`: Publish the schemas by creating a PR on the Abstract [schemas](https://github.com/AbstractSDK/schemas) repository.
 
 You can see the full list of tasks available by running `just --list`.
