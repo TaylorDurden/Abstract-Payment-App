@@ -19,7 +19,7 @@ cosmwasm-schema = { version = "2.1.4" }
 cw-controllers = { version = "2.0.0" }
 cw-storage-plus = "2.0.0"
 thiserror = { version = "2.0.3" }
-schemars = "0.8"
+schemars = "1.0"
 cw-asset = { version = "4.0.0" }
 
 abstract-app = { version = "0.24.1-beta.2" }
